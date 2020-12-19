@@ -1,0 +1,234 @@
+/*Подключение шрифтов*/
+
+/* vietnamese */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/quicksand/v21/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkCEv58m-wi40.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/quicksand/v21/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkCEv58i-wi40.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/quicksand/v21/6xK-dSZaM9iE8KbpRA_LJ3z8mH9BOJvgkCEv58a-wg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+/*Общие стили*/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+/* Стили для загрузки*/
+
+  .loader {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    transition: 0.6s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(198, 248, 217);
+  }
+  
+  .loadItem {
+    border: 16px solid #7796fc;
+    border-top: 16px solid #9aadff; 
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+/*Стили для body*/
+  
+  body {
+    font-family: "Quicksand", sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    background-size: cover;
+    color: white;
+    text-shadow: black 3px 3px 5px, black -1px -1px 0, black -1px 1px 0,
+      black 1px -1px 0;
+    transition: background-image 1s ease-in-out;
+  }
+
+/*Cтили погоды*/
+  
+  .weather {
+    height: 235px;
+    font-size: 1.5rem;
+  }
+  
+/*Стили для времени*/
+  
+.date {
+  margin-top: 0.5rem;
+  font-size: 3rem;
+}
+
+.time {
+  display: flex;
+  font-size: 3rem;
+}
+
+.time div {
+  margin-left: 10px;
+  width: 60px;
+}
+
+
+/*Стили имени*/
+
+  h1 {
+    margin-bottom: 1rem;
+  }
+
+  .name {
+    display: inline-block;
+  }
+
+/*Стили цели*/
+  
+  h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+/*Стили цитаты*/
+
+  .quote {
+    margin-top: 0.7rem;
+    font-size: 1rem;
+    width: 700px;
+    height: 10%;
+  }
+  .quote blockquote {
+    font-size: 1rem;
+  }
+
+/*Стили кнопок*/
+  
+  .btn {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+    filter: grayscale(0.8);
+  }
+  
+  .btnLast {
+    position: fixed;
+    left: 0px;
+    font-size: 50px;
+    transition: left 0.3s ease;
+    margin: 0 0 0 10px;
+  }
+  
+  .btnNext {
+    position: fixed;
+    right: 0px;
+    font-size: 50px;
+    transition: right 0.3s ease;
+    margin: 0 10px 0 0;
+  }
+  
+  .btnNext:active,
+  .btnNext:focus {
+    right: -3px;
+  }
+  
+  .btnLast:active,
+  .btnLast:focus {
+    left: -3px;
+  }
+  
+  .btn:hover,
+  .btnLast:hover,
+  .btnNext:hover {
+    cursor: pointer;
+    filter: grayscale(0.2);
+  }
+  .btn:active,
+  .btn:focus {
+    outline: 0;
+  }
+  
+/*Медиа запроc для максимальной ширины 700px*/
+
+  @media (max-width: 700px) {
+    .weather {
+      height: 190px;
+      font-size: 1rem;
+    }
+
+    #clock {
+      font-size: 1.5rem;
+      margin-left: 10px;
+      width: 60px;
+    }
+  
+  /*Стили даты*/
+
+    h1 {
+      font-size: 1.2rem;
+    }
+    h2 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .quote {
+      width: 300px;
+    }
+    .btnLast {
+      position: fixed;
+      top: 100px;
+      left: 0px;
+      font-size: 50px;
+      transition: left 0.5s ease;
+      margin: 0 0 0 10px;
+    }
+    
+    .btnNext {
+      position: fixed;
+      top: 100px;
+      right: 0px;
+      font-size: 50px;
+      transition: right 0.5s ease;
+      margin: 0 10px 0 0;
+    }
+    .date {
+      margin:0 0 0.5rem 0;
+      font-size: 1.5rem;
+    }
+  }
+  

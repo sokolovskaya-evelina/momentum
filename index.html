@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/owfont-regular.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>momentum</title>
+  </head>
+  <body>
+    <!--Ожидание загрузки-->
+    <div class="loader">
+      <div class="loadItem"></div>
+    </div>
+
+    <!--Прогноз погоды-->
+    <div class="weather">
+      <i class="weather-icon owf"></i>
+      <div class="city" contenteditable="true"></div>
+      <div class="temperature"></div>
+      <div class="windSpeed"></div>
+      <div class="humidity"></div>
+      <div class="weather-discription"></div>
+    </div>
+
+    
+    <!--Время-->
+    <time class="date"> </time>
+    <div class="time">
+      <div class="hours"></div>
+      <div class="minutes"></div>
+      <div class="seconds"></div>
+    </div>
+    
+    <!--Получение имени-->
+    <h1>
+      <span class="greeting"></span>
+      <span class="name" contenteditable="true"></span>
+    </h1>
+
+    <!--Получение цели-->
+    <h2>Какая Ваша цель на сегодня?</h2>
+    <h2 class="focus" contenteditable="true"></h2>
+
+    <!--Кнопки переключения между слайдами-->
+    <div class="btnNext"><i class="fa fa-chevron-right"></i></i></div>
+    <div class="btnLast"><i class="fa fa-chevron-left"></i></i></div>
+
+    <!--Цитаты-->
+    <div class="btn"><i class="fas fa-sync-alt"></i></div>
+    <figure class="quote">
+      <blockquote></blockquote>
+    </figure>
+
+    <script src="https://kit.fontawesome.com/b71c807dba.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
